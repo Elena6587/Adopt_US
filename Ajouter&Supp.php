@@ -276,7 +276,7 @@ $animaux = $stmtAnimaux->fetchAll(PDO::FETCH_ASSOC);
     </tbody>
   </table>
   <p style="text-align:center; margin-top:30px;">
-    <a href="Acceuil.php" style="text-decoration:none; color:#B52C24; font-weight:bold;">Retour à l'accueil</a>
+    <a href="index.php" style="text-decoration:none; color:#B52C24; font-weight:bold;">Retour à l'accueil</a>
   </p>
 </div>
 </body>

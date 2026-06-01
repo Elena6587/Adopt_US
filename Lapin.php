@@ -27,7 +27,7 @@ $estAdmin = (isset($_SESSION['user']) && $_SESSION['user'] === 'admin');
   </div>
   <nav class="navBar">
     <div class="navBarItem">
-      <a href="Acceuil.php">Accueil</a>
+      <a href="index.php">Accueil</a>
     </div>
     <!-- Sous-menu Chien -->
     <div class="navBarItem">
