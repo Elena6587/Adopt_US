@@ -1,0 +1,162 @@
+body{
+    background-color: rgb(178, 174, 166);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    width: 100%; /* Pour que le titre reste bien en haut seul */
+}
+
+/* ===== BARRE DE NAVIGATION ===== */
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #f0f0f0;
+    padding: 15px;
+    margin: 0;
+}
+
+.navBarItem {
+  position: relative;
+}
+
+.navBar a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navBar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Flèche ▼ */
+.arrowNav {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* ===== MENU DÉROULANT ===== */
+.subNavBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subNavBar a {
+  padding: 8px 15px;
+  color: #333;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.subNavBar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affichage au survol */
+.navBarItem:hover .subNavBar {
+  display: flex;
+}
+
+.button-slide {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #9a1919;
+    color: black;
+    border: 1px solid #000;
+    border-radius: 4px;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button-slide:hover {
+  background-color: #9a1919;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navBar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .navBarItem {
+        font-size: 16px;
+    }
+    .navBar a {
+        font-size: 15px;
+    }
+    .subNavBar {
+        position: static;
+        box-shadow: none;
+        border: none;
+    }
+    .search-sidebar form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+    .filter-group select {
+        min-width: unset;
+        width: 100%;
+    }
+    .search-sidebar button[type="submit"] {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+    .results-grid {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+    .add-card {
+        width: 100%;
+        max-width: 400px;
+        min-height: 150px;
+    }
+    h1 {
+        font-size: 1.6rem;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 95vw;
+    }
+    .navBar {
+        gap: 8px;
+    }
+    .navBar a {
+        font-size: 13px;
+    }
+}

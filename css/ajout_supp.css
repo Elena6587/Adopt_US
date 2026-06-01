@@ -1,0 +1,210 @@
+/* On garde tes styles globaux */
+body {
+    background-color: #F4F0F0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px 0;
+    color: #333;
+}
+
+#button-img{
+  background-color: transparent;
+  border: transparent;
+}
+
+/* ===== BARRE DE NAVIGATION ===== */
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #F4F0F0;
+    font-size: 25px;
+    margin: 0;
+}
+
+.navBarItem {
+  position: relative;
+}
+
+.navBar a {
+  color: #252525;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navBar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Flèche ▼ */
+.arrowNav {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* ===== MENU DÉROULANT ===== */
+.subNavBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subNavBar a {
+  padding: 8px 15px;
+  color: #333;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.subNavBar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affichage au survol */
+.navBarItem:hover .subNavBar {
+  display: flex;
+}
+
+/* On stylise le formulaire pour qu'il ressemble à tes "cartes" */
+.admin-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.admin-form label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    color: #222;
+}
+
+.admin-form input, .admin-form select, .admin-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+
+/* Ton bouton avec ta couleur dorée/beige */
+.button-add {
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.button-add:hover {
+    background-color: #4CAF50;
+}
+
+/* Style du tableau */
+.admin-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: #F4F0F0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.admin-table th {
+    background-color: #F4F0F0;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+}
+
+.admin-table td {
+    padding: 12px;
+    border-bottom: transparent;
+    text-align: center;
+}
+
+.btn-suppr {
+    background-color: #B52C24;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navBar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+    .navBar a {
+        font-size: 15px;
+    }
+    .admin-form {
+        margin: 10px;
+        padding: 15px;
+    }
+    .admin-form input,
+    .admin-form select,
+    .admin-form textarea {
+        font-size: 16px; /* Évite le zoom auto sur iOS */
+    }
+    .admin-table {
+        font-size: 13px;
+        margin: 15px;
+    }
+    .admin-table th,
+    .admin-table td {
+        padding: 8px 5px;
+    }
+    /* Tableau scrollable horizontalement */
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    h1 {
+        font-size: 1.5rem;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-form {
+        margin: 5px;
+        padding: 10px;
+    }
+    .navBar a {
+        font-size: 13px;
+    }
+}

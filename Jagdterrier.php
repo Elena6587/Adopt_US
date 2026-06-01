@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adopt US</title>
+  <link rel="stylesheet" href="css/Jagdterrier.css">
+</head>
+<body>
+  <h1>Chien</h1>
+    <?php require_once 'header.php';?>
+
+  <div class="card">
+    <div class="card-image">
+        <img src="Jagdterrier.jpg" alt="Jagdterrier">
+    </div>
+    <div class="card-content">
+        <h3>Race: Jagdterrier</h3>
+        <h4>NOM: Damina</h4>
+        <p>AGE: 28 ans</p>
+        <p>SEXE: MALE</p>
+        <p>TAILLE: 39 cm</p>
+        <p>POIDS: 10 kg</p>
+        <button href="Adopter.php" onclick="demanderAdoption('Damina')" class="button-slide">Adopter</a>
+    </div>
+</div>
+<script>
+function demanderAdoption(nomChien) {
+    let confirmation = confirm("Confirmer l'adoption de " + nomChien + " ?");
+    if (confirmation) {
+        // On définit les infos du rendez-vous
+        const date = "10 Decembre 2026";
+        const heure = "9h55";
+        const lieu = "123 Rue de la Paix, Paris";
+        // On envoie tout vers la page Adopter.php dans l'URL
+        window.location.href = "Adopter.php?nom=" + nomChien + "&date=" + date + "&heure=" + heure + "&lieu=" + lieu;
+    }
+}
+  </script>
+</body>
+</html>

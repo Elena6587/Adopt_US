@@ -1,0 +1,384 @@
+/* ===== GLOBAL ===== */
+body { 
+  font-family: "Georgia", serif;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+  background-color: #fff;
+  list-style-type: none;
+}
+
+/* ===== HEADER ===== */
+h1 {
+  padding: 20px 0 10px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
+}
+
+/* ===== BARRE DE NAVIGATION ===== */
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #fff;
+    font-size: 25px;
+    margin: 0;
+}
+
+.navBarItem {
+  position: relative;
+}
+
+.navBar a {
+  color: #252525;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navBar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Flèche ▼ */
+.arrowNav {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* ===== MENU DÉROULANT ===== */
+.subNavBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subNavBar a {
+  padding: 8px 15px;
+  color: #333;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.subNavBar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affichage au survol */
+.navBarItem:hover .subNavBar {
+  display: flex;
+}
+
+/* ===== BOUTON ===== */
+.wp-block-button__link {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #a60000;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.wp-block-button__link:hover {
+  background-color: #d80000;
+}
+
+
+/* Cartes des chiens */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-content h3 { margin: 0 0 10px 0; font-size: 1.1em; color: #222; }
+.card-content h4 { margin: 0 0 8px 0; color: #666; font-size: 0.9em; }
+.card-content p { margin: 4px 0; font-size: 0.85em; color: #444; }
+
+/* ===== CONTENEUR PRINCIPAL (ALIGNE EN LIGNE) ===== */
+.container-galerie {
+    display: flex;
+    flex-direction: row;      /* Aligne les cartes horizontalement */
+    flex-wrap: wrap;          /* Passe à la ligne si l'écran est trop petit */
+    justify-content: center;  /* Centre les cartes horizontalement dans la page */
+    gap: 30px;                /* Espace de 30px entre chaque carte */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;           /* Centre le bloc principal */
+}
+
+/* ===== STYLE D'UNE CARTE ===== */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 260px;             /* Largeur fixe et uniforme pour chaque carte */
+    display: flex;
+    flex-direction: column;   /* Aligne les éléments internes (Image puis Texte) du haut vers le bas */
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Petit effet de survol sympathique */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== IMAGES DES CARTES ===== */
+.card-image {
+    width: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;        /* Empêche l'image de se déformer */
+    display: block;
+}
+
+/* ===== CONTENU TEXTUEL ===== */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-content h3 { 
+    margin: 0 0 10px 0; 
+    font-size: 1.1em; 
+    color: #222; 
+}
+
+.card-content h4 { 
+    margin: 0 0 8px 0; 
+    color: #666; 
+    font-size: 0.9em; 
+}
+
+.card-content p { 
+    margin: 4px 0; 
+    font-size: 0.9em; 
+    color: #444; 
+}
+
+/* ===== BOUTON "VOIR PLUS" ===== */
+.button-slide {
+    margin-top: 15px;
+    background-color: #a60000;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 80%;               /* Largeur équilibrée à l'intérieur de la carte */
+}
+
+.button-slide:hover {
+    background-color: #d80000;
+}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer {
+  font-size: 0.75rem;
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .subNavBar {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background-color: #f9f9f9;
+  }
+
+  .navBarItem:hover .subNavBar {
+    display: none;
+  }
+
+  .text-container h1 {
+    font-size: 1.5rem;
+  }
+}
+/* Le conteneur qui aligne les cartes en ligne */
+.container-galerie {
+    display: flex;         /* Aligne les enfants en ligne */
+    flex-direction: row;   /* Direction horizontale */
+    flex-wrap: wrap;      /* Permet de passer à la ligne si l'écran est petit */
+    justify-content: center; /* Centre les éléments sur la page */
+    gap: 30px;            /* Espace entre les colonnes */
+    padding: 20px;
+}
+
+/* Chaque bloc animal (Image + Texte en dessous) */
+.card-animal {
+    display: flex;
+    flex-direction: column; /* Force le texte à aller SOUS l'image */
+    align-items: center;    /* Centre l'image et le texte horizontalement */
+    width: 250px;           /* Largeur de chaque colonne */
+    text-align: center;
+}
+
+/* Style de l'image */
+.card-animal img {
+    width: 100%;            /* L'image prend toute la largeur du bloc (250px) */
+    height: 200px;          /* Hauteur fixe pour l'uniformité */
+    object-fit: cover;      /* Coupe l'image proprement pour remplir le cadre */
+    border-radius: 10px;    /* Coins arrondis */
+    margin-bottom: 15px;    /* Espace entre l'image et le début du texte */
+}
+
+/* Style du texte */
+.infos p {
+    margin: 5px 0;          /* Espace serré entre les lignes de texte */
+    font-family: sans-serif;
+}
+
+/* Le bouton */
+.btn-voir {
+    background-color: #9f1414;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== SECTION Connexion ===== */
+.connexion {
+  background-image: url('');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  color: black;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ===== BOUTONS ===== */
+.button-slide {
+  margin-top: 15px;
+  background-color: #a60000;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.button-slide:hover {
+  background-color: #d80000;
+}
+
+/* ===== RESPONSIVE CARTES ===== */
+@media (max-width: 768px) {
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .school-card {
+    width: 90%;
+  }
+}
+
+/* ===== RESPONSIVE COMPLET ===== */
+@media (max-width: 768px) {
+    .navBar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+    .navBar a {
+        font-size: 15px;
+    }
+    .container-galerie {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 20px;
+    }
+    .card {
+        width: 95%;
+        max-width: 400px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+    .navBar a {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,322 @@
+body{
+    background-color: #CBC8BE;
+    display: flex;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    background-color: #CBC8BE;
+    width: 100%; /* Pour que le titre reste bien en haut seul */
+}
+
+
+/* ===== BARRE DE NAVIGATION ===== */
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #DFDDD7;
+    padding: 15px;
+    margin: 0;
+}
+
+.navBarItem {
+  position: relative;
+  font-size: 25px;
+}
+
+.navBar a {
+  color: #0c0c0c;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navBar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Flèche ▼ */
+.arrowNav {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* ===== MENU DÉROULANT ===== */
+.subNavBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subNavBar a {
+  padding: 8px 15px;
+  color: #232323;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.subNavBar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affichage au survol */
+.navBarItem:hover .subNavBar {
+  display: flex;
+}
+
+/* Barre de filtres horizontale */
+.search-sidebar form {
+    display: flex;          /* Active le mode flexbox */
+    flex-direction: row;    /* Aligne les enfants en ligne */
+    flex-wrap: wrap;        /* Permet de revenir à la ligne sur mobile */
+    gap: 20px;              /* Espace entre chaque bloc de filtre */
+    background-color: #DFDDD7;
+    justify-content: center; /* Centre les filtres sur la page */
+    align-items: flex-end;   /* Aligne le bouton avec le bas des menus */
+    padding: 20px;
+}
+
+/* Garde le label au-dessus de son menu déroulant */
+.filter-group {
+    display: flex;
+    background-color: #DFDDD7;
+    flex-direction: column; 
+    gap: 5px;
+}
+
+/* Style des menus pour qu'ils soient propres */
+.filter-group select {
+    background-color: #DFDDD7;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 120px;
+}
+
+/* Style du bouton filtrer pour l'aligner */
+.search-sidebar button[type="submit"] {
+    padding: 8px 20px;
+    height: 38px; /* Même hauteur que les selects environ */
+    background-color: transparent;
+    color: rgb(16, 16, 16);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-group label {
+    background-color: #DFDDD7;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #222222;
+}
+
+.filter-group select {
+    background-color: #DFDDD7;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Grille de résultats */
+.results-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* La carte Ajouter */
+.add-card {
+    border: 2px dashed #9f1414;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff5f5;
+    min-height: 300px;
+}
+
+.add-icon {
+    font-size: 50px;
+    color: #9f1414;
+    font-weight: bold;
+}
+
+/* L'effet grisé pour la suppression */
+.card.grisée {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    pointer-events: none; /* Empêche de cliquer dessus */
+    border: 1px solid #000;
+}
+
+.btn-suppr {
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* Cartes des chats */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 280px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-content h3 { margin: 0 0 10px 0; color: #333; }
+.card-content h4 { margin: 0 0 5px 0; color: #666; font-size: 0.9em; }
+.card-content p { margin: 2px 0; font-size: 0.85em; }
+
+/* Bouton */
+.button-slide {
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #CBC8BE;
+    color: white; /* Changé en blanc pour plus de lisibilité */
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button-slide:hover {
+    background-color: #CBC8BE;
+}
+
+.add-card {
+    border: 4px dashed #881c1c !important; /* Bordure en pointillés rouge */
+    background-color: #fdfdfd;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.add-card:hover {
+    background-color: #fff0f0;
+    transform: scale(1.02);
+}
+
+/* Responsive : Si l'écran est petit, on empile sidebar et grille */
+@media (max-width: 800px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .search-sidebar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        gap: 10px;
+    }
+    .navBar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+    .navBarItem {
+        font-size: 16px;
+    }
+    .navBar a {
+        font-size: 15px;
+    }
+    .subNavBar {
+        position: static;
+        box-shadow: none;
+        border: none;
+    }
+    .search-sidebar form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+    .filter-group select {
+        min-width: unset;
+        width: 100%;
+    }
+    .search-sidebar button[type="submit"] {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+    .results-grid {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+    .add-card {
+        width: 100%;
+        max-width: 400px;
+        min-height: 150px;
+    }
+    h1 {
+        font-size: 1.6rem;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 95vw;
+    }
+    .navBar a {
+        font-size: 13px;
+    }
+}

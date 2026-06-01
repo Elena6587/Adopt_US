@@ -1,0 +1,208 @@
+body {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 50px;
+    background-color: rgb(74, 48, 3);
+    color: white;
+    border: none;
+    text-align: center;
+    margin: 50px 0 20px 0;
+    width: 100%;
+    padding: 10px 0;
+}
+/* ===== BARRE DE NAVIGATION ===== */
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #eeeeee;
+    padding: 15px;
+    margin: 0;
+}
+
+.navBarItem {
+  position: relative;
+  font-size: 25px;
+}
+
+.navBar a {
+  color: #525151;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navBar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Flèche ▼ */
+.arrowNav {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* ===== MENU DÉROULANT ===== */
+.subNavBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subNavBar a {
+  padding: 8px 15px;
+  color: #333;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.subNavBar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affichage au survol */
+.navBarItem:hover .subNavBar {
+  display: flex;
+}
+
+.identifiant {
+    background-color: rgb(74, 48, 3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.identifiant input {
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+.identifiant button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(74, 48, 3);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.identifiant button:hover {
+    background-color: #ccc;
+}
+
+button{
+    align-items: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.image img {
+    width: 300px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+}
+
+/* -------------------- */
+/* 📱 RESPONSIVE MOBILE */
+/* -------------------- */
+
+@media (max-width: 768px) {
+    .identifiant {
+        width: 80%;
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 32px;
+    }
+
+    .identifiant input {
+        font-size: 14px;
+    }
+
+    .identifiant button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .identifiant {
+        width: 90%;
+        padding: 15px;
+    }
+
+    p {
+        font-size: 28px;
+    }
+}
+
+/* ===== RESPONSIVE COMPLÉMENTAIRE ===== */
+@media (max-width: 768px) {
+    .navBar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+    .navBar a {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 2rem;
+        margin: 20px 0 10px 0;
+    }
+    .identifiant {
+        width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .identifiant {
+        width: 95%;
+        padding: 12px;
+    }
+    .navBar a {
+        font-size: 13px;
+    }
+}

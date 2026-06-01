@@ -1,0 +1,343 @@
+/* Styles globaux */
+body {
+    background-color: #d1c1a9;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
+    width: 100%;
+    color: #333;
+}
+/* ===== BARRE DE NAVIGATION ===== */
+.navBar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #c7b793;
+    padding: 15px;
+    margin: 0;
+}
+
+.navBarItem {
+  position: relative;
+  font-size: 25px;
+}
+
+.navBar a {
+  color: #0c0c0c;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: opacity 0.3s, text-decoration 0.3s;
+}
+
+.navBar a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Flèche ▼ */
+.arrowNav {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* ===== MENU DÉROULANT ===== */
+.subNavBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.subNavBar a {
+  padding: 8px 15px;
+  color: #232323;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.subNavBar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Affichage au survol */
+.navBarItem:hover .subNavBar {
+  display: flex;
+}
+
+/* Conteneur principal en colonne */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Barre de filtres horizontale */
+.search-sidebar form {
+    display: flex;          /* Active le mode flexbox */
+    flex-direction: row;    /* Aligne les enfants en ligne */
+    flex-wrap: wrap;        /* Permet de revenir à la ligne sur mobile */
+    gap: 20px;              /* Espace entre chaque bloc de filtre */
+    background-color: #c7b793;
+    justify-content: center; /* Centre les filtres sur la page */
+    align-items: flex-end;   /* Aligne le bouton avec le bas des menus */
+    padding: 20px;
+}
+
+/* Garde le label au-dessus de son menu déroulant */
+.filter-group {
+    display: flex;
+    background-color: #c7b793;
+    flex-direction: column; 
+    gap: 5px;
+}
+
+/* Style des menus pour qu'ils soient propres */
+.filter-group select {
+    background-color: #c7b793;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 120px;
+}
+
+/* Style du bouton filtrer pour l'aligner */
+.search-sidebar button[type="submit"] {
+    padding: 8px 20px;
+    height: 38px; /* Même hauteur que les selects environ */
+    background-color: transparent;
+    color: rgb(16, 16, 16);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-group label {
+    background-color: #c7b793;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #222222;
+}
+
+.filter-group select {
+    background-color: #c7b793;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Grille de résultats */
+.results-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Cartes des chiens */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-content h3 { margin: 0 0 10px 0; font-size: 1.1em; color: #222; }
+.card-content h4 { margin: 0 0 8px 0; color: #666; font-size: 0.9em; }
+.card-content p { margin: 4px 0; font-size: 0.85em; color: #444; }
+
+.container-galerie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* LA CARTE GRISEE */
+.card.grisee {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+/* LA CARTE PLUS */
+.add-card {
+    border: 3px dashed #9f1414; /* Pointillés rouges */
+    background-color: #fffafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    min-height: 350px;
+}
+
+.add-icon {
+    font-size: 80px;
+    color: #9f1414;
+    font-weight: bold;
+}
+
+/* L'effet grisé quand on "supprime" */
+.card.grisee {
+    filter: grayscale(100%); /* Tout en noir et blanc */
+    opacity: 0.4;            /* Presque transparent */
+    border: 1px solid black;
+}
+
+.btn-suppr {
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+/* Bouton */
+.button-slide {
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #c7b793;
+    color: white; /* Texte en blanc pour le contraste */
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button-slide:hover {
+    background-color: #c7b793;
+}
+
+.add-card {
+    border: 4px dashed #881c1c !important; /* Bordure en pointillés rouge */
+    background-color: #fdfdfd;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.add-card:hover {
+    background-color: #fff0f0;
+    transform: scale(1.02);
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navBar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .navBarItem {
+        font-size: 16px;
+    }
+    .navBar a {
+        font-size: 15px;
+    }
+    .subNavBar {
+        position: static;
+        box-shadow: none;
+        border: none;
+    }
+    .search-sidebar form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+    }
+    .filter-group select {
+        min-width: unset;
+        width: 100%;
+    }
+    .search-sidebar button[type="submit"] {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+    .results-grid {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+    .add-card {
+        width: 100%;
+        max-width: 400px;
+        min-height: 150px;
+    }
+    h1 {
+        font-size: 1.6rem;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 95vw;
+    }
+    .navBar {
+        gap: 8px;
+    }
+    .navBar a {
+        font-size: 13px;
+    }
+}
