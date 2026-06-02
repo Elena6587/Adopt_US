@@ -8,6 +8,20 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
+/*
+-------------------------------------------
+   Exemple de requête PL/SQL (Oracle)
+   Demandée pour le dossier du projet
+-------------------------------------------
+
+SET SERVEROUTPUT ON;
+
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Connexion effectuée');
+END;
+/
+*/
+
 // Liste des tables à sauvegarder
 $tables = ['Animal', 'Adoptant', 'Photo', 'Type_race', 'Espece'];
 
