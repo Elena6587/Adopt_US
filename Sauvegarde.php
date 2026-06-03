@@ -20,7 +20,8 @@ BEGIN
     SELECT COUNT(*)
     INTO nb_animaux
     FROM Animal;
-
+    
+-- Affiche du message
     DBMS_OUTPUT.PUT_LINE(
         'Nombre d''animaux : ' || nb_animaux
     );
