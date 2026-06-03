@@ -10,14 +10,20 @@ if (!isset($_SESSION['admin_id'])) {
 
 /*
 -------------------------------------------
-   Exemple de requête PL/SQL (Oracle)
+   Exemple de requête PL/SQL
    Demandée pour le dossier du projet
 -------------------------------------------
 
-SET SERVEROUTPUT ON;
-
+DECLARE
+    nb_animaux NUMBER;
 BEGIN
-    DBMS_OUTPUT.PUT_LINE('Connexion effectuée');
+    SELECT COUNT(*)
+    INTO nb_animaux
+    FROM Animal;
+
+    DBMS_OUTPUT.PUT_LINE(
+        'Nombre d''animaux : ' || nb_animaux
+    );
 END;
 /
 */
