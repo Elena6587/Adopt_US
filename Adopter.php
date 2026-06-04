@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Adopt us</title>
-  <link rel="stylesheet" href="Adopte.css">
+  <link rel="stylesheet" href="css/Adopte.css">
 </head>
 <body>
   <h1>Adopter</h1>
