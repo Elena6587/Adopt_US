@@ -9,7 +9,7 @@
   <h1>Lapin</h1>
   <nav class="navBar">
     <div class="navBarItem">
-      <a href="Acceuil.php">Accueil</a>
+      <a href="index.php">Accueil</a>
     </div>
     <!-- Sous-menu Chien -->
     <div class="navBarItem">

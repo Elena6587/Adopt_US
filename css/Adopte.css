@@ -1,7 +1,5 @@
 body {
-    background-color: rgb(174, 160, 140);
-    /* Correction de l'image de fond */
-    background-image: url("873630.jpg"); 
+    background-image: url("Images/873630.jpg"); 
     background-size: cover; 
     background-attachment: fixed;
     display: flex;

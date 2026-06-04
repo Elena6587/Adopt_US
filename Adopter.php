@@ -28,7 +28,7 @@
                 <p><strong>Lieu :</strong> <?php echo $lieu; ?></p>
             </div>
             <div class="button-group">
-        <button onclick="if(confirm('Annuler cette adoption ?')) { window.location.href='Acceuil.php'; }" class="button-cancel">
+        <button onclick="if(confirm('Annuler cette adoption ?')) { window.location.href='index.php'; }" class="button-cancel">
             Annuler</button>
         </section>
     </div>
