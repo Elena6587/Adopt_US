@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user'] = 'user'; 
                 $_SESSION['user_id'] = $user['ID_adoptant'];
                 $_SESSION['user_nom'] = $user['nom'];
-                header('Location: Acceuil.php');
+                header('Location: index.php');
                 exit();
             } else {
                 $error = 'Mot de passe incorrect.';
