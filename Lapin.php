@@ -97,7 +97,7 @@ $estAdmin = (isset($_SESSION['user']) && $_SESSION['user'] === 'admin');
       </select>
     </div>
 
-    <div class="filter-group">
+    <div class="filter-group"></div>
       <label>Couleur:</label>
       <select name="couleur"> <option value="unie">UnieColor</option>
         <option value="bi">Bicolor</option>
