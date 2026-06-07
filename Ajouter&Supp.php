@@ -118,6 +118,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     }
 }
 
+// Modification
+    if ($action === 'update' && isset($_POST['id'])) {
+        try {
+            $stmt = $pdo->prepare("Update Animal SET ID_animal = ?, date_naissance=?, nom=?, taille=?, poids=?, couleur=?");
+            $stmt->execute([$_POST['id']]);
+            $msg = "Modification effectuée avec succès.";
+        } catch (Exception $e) {
+            $errors[] = "Erreur lors de la modification : " . $e->getMessage();
+        }
+    }
+
+
 // RÉCUPÉRATION DES RACES
 $stmtRaces = $pdo->query("
     SELECT r.ID_type_race, r.nom_race, e.nom_espece
