@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     }
 }
 
-// Modification
+/* Modification
     if ($action === 'update' && isset($_POST['id'])) {
         try {
             $stmt = $pdo->prepare("Update Animal SET ID_animal = ?, date_naissance=?, nom=?, taille=?, poids=?, couleur=?");
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $errors[] = "Erreur lors de la modification : " . $e->getMessage();
         }
     }
-
+*/
 
 // RÉCUPÉRATION DES RACES
 $stmtRaces = $pdo->query("
@@ -277,6 +277,11 @@ $animaux = $stmtAnimaux->fetchAll(PDO::FETCH_ASSOC);
                 <input type="hidden" name="id" value="<?= $a['ID_animal'] ?>" />
                 <button type="submit" class="btn-suppr">Supprimer</button>
               </form>
+              <!--<form method="POST" style="display:inline;" onsubmit="return confirm('Confirmer la modification de cet animal ?');">
+                <input type="hidden" name="action" value="update" />
+                <input type="hidden" name="id" value="<?= $a['ID_animal'] ?>" />
+                <button type="submit" class="btn-modif">Modifie</button>
+              </form>-->
             </td>
           </tr>
           <?php endforeach; ?>
