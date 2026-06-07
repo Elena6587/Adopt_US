@@ -17,9 +17,9 @@
       <a href="Lapin.php">Lapin</a>
     </div>-->
 
-    <div class="navBarItem">
+    <!--<div class="navBarItem">
       <a href="Tortue.php">Tortue</a>
-    </div>    
+    </div> -->  
 
     <div class="navBarItem">
       <a href="Connexion.php" id="connexnBtn">Connexion</a>
